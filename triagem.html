@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Formulário de triagem de sintomas gripais.">
+  <title>Triagem · Hospital Bem-Estar</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-body-tertiary">
+  <nav class="navbar navbar-expand-md bg-white border-bottom sticky-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="index.html"><span aria-hidden="true">🏥</span> Hospital Bem-Estar</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu" aria-controls="menu" aria-expanded="false" aria-label="Abrir menu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="menu">
+        <ul class="navbar-nav ms-auto gap-md-2">
+          <li class="nav-item"><a class="nav-link" href="index.html">Início</a></li>
+          <li class="nav-item"><a class="nav-link active" aria-current="page" href="triagem.html">Triagem</a></li>
+          <li class="nav-item"><a class="nav-link" href="login.html">Acesso da equipe</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container py-5">
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <h1 class="h2 fw-bold mb-1">Triagem de sintomas gripais</h1>
+        <p class="text-body-secondary mb-4">Os campos marcados com <span class="text-danger">*</span> são obrigatórios.</p>
+
+        <form id="triagem" class="vstack gap-4" novalidate>
+          <fieldset class="cartao">
+            <legend class="cartao__titulo">1. Identificação</legend>
+            <div class="row g-3">
+              <div class="col-12">
+                <label for="nome" class="form-label">Nome completo <span class="text-danger">*</span></label>
+                <input type="text" class="form-control" id="nome" name="nome" autocomplete="name" required minlength="5">
+                <div class="invalid-feedback">Informe seu nome completo.</div>
+              </div>
+              <div class="col-md-6">
+                <label for="cpf" class="form-label">CPF <span class="text-danger">*</span></label>
+                <input type="text" class="form-control" id="cpf" name="cpf" inputmode="numeric" placeholder="000.000.000-00" maxlength="14" required>
+                <div class="invalid-feedback">Informe um CPF válido.</div>
+              </div>
+              <div class="col-md-6">
+                <label for="rg" class="form-label">RG</label>
+                <input type="text" class="form-control" id="rg" name="rg" maxlength="20">
+              </div>
+              <div class="col-md-6">
+                <label for="nascimento" class="form-label">Data de nascimento <span class="text-danger">*</span></label>
+                <input type="date" class="form-control" id="nascimento" name="nascimento" required>
+                <div class="invalid-feedback">Informe uma data de nascimento válida.</div>
+              </div>
+              <div class="col-md-6">
+                <label for="telefone" class="form-label">Telefone</label>
+                <input type="tel" class="form-control" id="telefone" name="telefone" autocomplete="tel" inputmode="numeric" placeholder="(00) 00000-0000" maxlength="15">
+              </div>
+            </div>
+          </fieldset>
+
+          <fieldset class="cartao">
+            <legend class="cartao__titulo">2. Histórico de saúde</legend>
+            <p class="mb-2">Você tem alguma doença pré-existente? <span class="text-danger">*</span></p>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="doenca" id="doenca-nao" value="nao" required>
+              <label class="form-check-label" for="doenca-nao">Não</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="doenca" id="doenca-sim" value="sim" required>
+              <label class="form-check-label" for="doenca-sim">Sim</label>
+              <div class="invalid-feedback">Escolha uma opção.</div>
+            </div>
+            <div id="campo-doencas" class="mt-3" hidden>
+              <label for="doencas" class="form-label">Quais? <span class="text-danger">*</span></label>
+              <textarea class="form-control" id="doencas" name="doencas" rows="2" placeholder="Ex.: diabetes, hipertensão, asma"></textarea>
+              <div class="invalid-feedback">Conte quais doenças você tem.</div>
+            </div>
+          </fieldset>
+
+          <fieldset class="cartao">
+            <legend class="cartao__titulo">3. Sintomas</legend>
+            <p class="mb-2">Marque o que você está sentindo: <span class="text-danger">*</span></p>
+            <div class="row row-cols-1 row-cols-sm-2 g-2" id="sintomas">
+              <div class="col"><div class="form-check"><input class="form-check-input" type="checkbox" name="sintomas" id="s-febre" value="Febre"><label class="form-check-label" for="s-febre">Febre</label></div></div>
+              <div class="col"><div class="form-check"><input class="form-check-input" type="checkbox" name="sintomas" id="s-garganta" value="Dor de garganta"><label class="form-check-label" for="s-garganta">Dor de garganta</label></div></div>
+              <div class="col"><div class="form-check"><input class="form-check-input" type="checkbox" name="sintomas" id="s-tosse" value="Tosse"><label class="form-check-label" for="s-tosse">Tosse</label></div></div>
+              <div class="col"><div class="form-check"><input class="form-check-input" type="checkbox" name="sintomas" id="s-corpo" value="Dor no corpo"><label class="form-check-label" for="s-corpo">Dor no corpo</label></div></div>
+              <div class="col"><div class="form-check"><input class="form-check-input" type="checkbox" name="sintomas" id="s-coriza" value="Coriza"><label class="form-check-label" for="s-coriza">Coriza ou nariz entupido</label></div></div>
+              <div class="col"><div class="form-check"><input class="form-check-input" type="checkbox" name="sintomas" id="s-cabeca" value="Dor de cabeça"><label class="form-check-label" for="s-cabeca">Dor de cabeça</label></div></div>
+              <div class="col"><div class="form-check"><input class="form-check-input" type="checkbox" name="sintomas" id="s-ar" value="Falta de ar" data-alerta="true"><label class="form-check-label" for="s-ar">Falta de ar</label></div></div>
+            </div>
+            <div id="erro-sintomas" class="text-danger small mt-2" hidden>Marque pelo menos um sintoma.</div>
+
+            <div id="alerta-ar" class="alert alert-danger mt-3 mb-0" role="alert" hidden>
+              <strong>Atenção:</strong> falta de ar pode ser sinal de gravidade. Procure atendimento imediatamente
+              ou ligue <strong>192</strong> (SAMU).
+            </div>
+
+            <div class="row g-3 mt-1">
+              <div class="col-md-6">
+                <label for="inicio" class="form-label">Há quantos dias começaram os sintomas?</label>
+                <input type="number" class="form-control" id="inicio" name="inicio" min="0" max="60">
+                <div class="invalid-feedback">Informe um número entre 0 e 60.</div>
+              </div>
+            </div>
+          </fieldset>
+
+          <div class="d-flex flex-wrap gap-2 justify-content-end">
+            <button type="reset" class="btn btn-outline-secondary px-4">Limpar</button>
+            <button type="submit" class="btn btn-primary px-4">Enviar triagem</button>
+          </div>
+        </form>
+
+        <section id="resumo" class="cartao" hidden tabindex="-1" aria-labelledby="resumo-titulo">
+          <h2 id="resumo-titulo" class="h4 fw-bold">✅ Triagem concluída</h2>
+          <p class="text-body-secondary">Apresente este resumo na recepção.</p>
+          <dl class="row mb-4" id="resumo-dados"></dl>
+          <button type="button" class="btn btn-outline-primary" id="nova-triagem">Fazer nova triagem</button>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <footer class="border-top py-4 text-center text-body-secondary small">
+    Projeto de estudo · Hospital fictício · Nenhum dado é enviado: tudo fica no seu navegador
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <script src="js/validacao.js"></script>
+  <script src="js/triagem.js"></script>
+</body>
+</html>

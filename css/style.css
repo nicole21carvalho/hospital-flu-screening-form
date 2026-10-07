@@ -1,0 +1,89 @@
+:root {
+  --bs-body-font-family: 'Inter', system-ui, sans-serif;
+  --bs-primary: #0e7c86;
+  --bs-primary-rgb: 14, 124, 134;
+  --bs-link-color: #0e7c86;
+  --bs-link-color-rgb: 14, 124, 134;
+  --bs-link-hover-color: #0a5f67;
+}
+
+.btn-primary {
+  --bs-btn-bg: #0e7c86;
+  --bs-btn-border-color: #0e7c86;
+  --bs-btn-hover-bg: #0a5f67;
+  --bs-btn-hover-border-color: #0a5f67;
+  --bs-btn-active-bg: #084f56;
+  --bs-btn-active-border-color: #084f56;
+  --bs-btn-disabled-bg: #0e7c86;
+  --bs-btn-disabled-border-color: #0e7c86;
+}
+
+.btn-outline-primary {
+  --bs-btn-color: #0e7c86;
+  --bs-btn-border-color: #0e7c86;
+  --bs-btn-hover-bg: #0e7c86;
+  --bs-btn-hover-border-color: #0e7c86;
+  --bs-btn-active-bg: #0a5f67;
+  --bs-btn-active-border-color: #0a5f67;
+}
+
+.form-control:focus,
+.form-check-input:focus {
+  border-color: #5fb3ba;
+  box-shadow: 0 0 0 0.25rem rgba(14, 124, 134, 0.2);
+}
+
+.form-check-input:checked {
+  background-color: #0e7c86;
+  border-color: #0e7c86;
+}
+
+/* Campos opcionais não ganham o ✓ verde só por estarem vazios */
+.was-validated .form-control:not([required]):valid {
+  border-color: var(--bs-border-color);
+  background-image: none;
+  padding-right: 0.75rem;
+}
+
+.hero {
+  background: linear-gradient(180deg, #e8f6f7 0%, #ffffff 100%);
+}
+
+.passo {
+  padding: 1.5rem;
+  border: 1px solid var(--bs-border-color);
+  border-radius: 1rem;
+  background: #fff;
+}
+
+.passo__numero {
+  display: inline-grid;
+  place-items: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  margin-bottom: 0.75rem;
+  border-radius: 50%;
+  background: #e8f6f7;
+  color: #0e7c86;
+  font-weight: 700;
+}
+
+.cartao {
+  padding: 1.5rem;
+  border: 1px solid var(--bs-border-color);
+  border-radius: 1rem;
+  background: #fff;
+  box-shadow: 0 2px 12px rgba(16, 40, 60, 0.04);
+}
+
+.cartao__titulo {
+  float: none;
+  width: auto;
+  margin-bottom: 1rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+}
+
+#resumo:focus {
+  outline: none;
+}

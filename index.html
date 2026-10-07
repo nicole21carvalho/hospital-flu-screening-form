@@ -1,60 +1,88 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Introdução aos Formulários
-    </title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Triagem online de sintomas gripais para pacientes do hospital.">
+  <title>Hospital Bem-Estar · Triagem de sintomas gripais</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+  <nav class="navbar navbar-expand-md bg-white border-bottom sticky-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="index.html"><span aria-hidden="true">🏥</span> Hospital Bem-Estar</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu" aria-controls="menu" aria-expanded="false" aria-label="Abrir menu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="menu">
+        <ul class="navbar-nav ms-auto gap-md-2">
+          <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.html">Início</a></li>
+          <li class="nav-item"><a class="nav-link" href="triagem.html">Triagem</a></li>
+          <li class="nav-item"><a class="nav-link" href="login.html">Acesso da equipe</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
-
-    <h1>Formulário Hospitalar</h1>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="Home.html">Home</a>
-
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="cadastro.html">cadastro</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Dropdown
-                </a>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Action</a></li>
-                  <li><a class="dropdown-item" href="#">Another action</a></li>
-                  <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="#">Something else here</a></li>
-                </ul>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-              </li>
-            </ul>
-            <form class="d-flex" role="search">
-              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-outline-success" type="submit">Search</button>
-            </form>
+  <main>
+    <section class="hero">
+      <div class="container py-5">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-6">
+            <span class="badge rounded-pill text-bg-light border mb-3">Atendimento de síndromes gripais</span>
+            <h1 class="display-5 fw-bold mb-3">Faça sua triagem antes de chegar ao hospital</h1>
+            <p class="lead text-body-secondary mb-4">
+              Responda algumas perguntas sobre seus sintomas e seu histórico de saúde.
+              Leva menos de 2 minutos e agiliza o seu atendimento na recepção.
+            </p>
+            <div class="d-flex flex-wrap gap-2">
+              <a class="btn btn-primary btn-lg px-4" href="triagem.html">Iniciar triagem</a>
+              <a class="btn btn-outline-secondary btn-lg px-4" href="#como-funciona">Como funciona</a>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <img class="img-fluid rounded-4 shadow-sm" src="img/hospital.jpg" alt="Ilustração da fachada do hospital com uma ambulância na frente" width="720" height="720">
           </div>
         </div>
-      </nav>
-    
- </nav>
+      </div>
+    </section>
 
-<img  src="https://png.pngtree.com/png-vector/20240119/ourmid/pngtree-city-hospital-elements-png-image_11420665.png" alt="" width="1500" height="800"  >
+    <section id="como-funciona" class="container py-5">
+      <h2 class="h3 fw-bold text-center mb-4">Como funciona</h2>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="passo h-100">
+            <span class="passo__numero">1</span>
+            <h3 class="h5">Identificação</h3>
+            <p class="text-body-secondary mb-0">Informe nome, CPF e data de nascimento para localizarmos seu cadastro.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="passo h-100">
+            <span class="passo__numero">2</span>
+            <h3 class="h5">Histórico e sintomas</h3>
+            <p class="text-body-secondary mb-0">Conte se você tem alguma doença pré-existente e marque o que está sentindo.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="passo h-100">
+            <span class="passo__numero">3</span>
+            <h3 class="h5">Confirmação</h3>
+            <p class="text-body-secondary mb-0">Revise o resumo e apresente-o na recepção para agilizar o atendimento.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
 
+  <footer class="border-top py-4 text-center text-body-secondary small">
+    Projeto de estudo · Hospital fictício · Em caso de emergência, ligue <strong>192</strong> (SAMU)
+  </footer>
 
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>
